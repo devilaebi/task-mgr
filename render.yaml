@@ -1,6 +1,5 @@
 databases:
   - name: task-mgr
-    databaseName: task-mgr
     user: abhay
     plan: free
 
