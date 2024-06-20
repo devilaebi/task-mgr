@@ -1,0 +1,33 @@
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block", class: 'text-xl' %>
+    <%= form.text_field :title, class: 'border-2 p-3 border-green-500 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500' %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block", class: 'text-xl' %>
+    <%= form.text_area :description, class: 'border-2 p-3 border-green-500 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500' %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block", class: 'text-xl' %>
+    <%= form.select :status, Task.status.options, { }, { class: 'border-2 p-3 border-green-500 rounded-md bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500' } %>
+
+  </div>
+
+  <div>
+    <%= form.submit 'Create Task', class: 'bg-green-200 m-10 p-3 rounded-lg' %>
+  </div>
+<% end %>

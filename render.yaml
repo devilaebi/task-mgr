@@ -1,0 +1,23 @@
+databases:
+  - name: task-mgr
+    databaseName: task-mgr
+    user: abhay
+    plan: free
+
+services:
+  - type: web
+    name: task-mgr
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: postgres://abhay:HVhNND7mmdd0LRustG2VtgpbBTfKnWyy@dpg-cppukodds78s73ef60p0-a/task_mgr
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: 4ade0a7d5bb8fadf65585c933fd83fea
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

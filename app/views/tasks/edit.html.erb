@@ -1,0 +1,16 @@
+
+<div class="flex justify-center items-center h-screen">
+  <div class="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4">Editing Task</h1>
+
+    <%= render "form", task: @task %>
+
+    <div class="mt-4 flex">
+      <%= link_to "Show this task", @task,  class: "text-blue-600 hover:text-blue-900 font-bold" %> &nbsp;|&nbsp;
+      <%= button_to "Destroy this task", @task, method: :delete,  class: "text-red-600 hover:text-red-900 font-bold" %> &nbsp;|&nbsp;
+      <%= link_to "Back to tasks", tasks_path, class: "text-green-600 hover:text-green-900 font-bold" %>
+    </div>
+  </div>
+</div>
+
+

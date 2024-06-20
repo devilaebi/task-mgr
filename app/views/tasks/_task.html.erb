@@ -1,0 +1,17 @@
+<div id="<%= dom_id task %>" class='flex flex-inline max-w-[70vw] items-center'>
+  <p class='mr-10'>
+    <strong>Title:</strong>
+    <%= task.title %>
+  </p>
+
+  <p  class='mr-10'>
+    <strong>Description:</strong>
+    <%= task.description %>
+  </p>
+
+  <p  class='mr-10'>
+    <strong>Status:</strong>
+    <%= task.status.titleize %>
+  </p>
+
+</div>

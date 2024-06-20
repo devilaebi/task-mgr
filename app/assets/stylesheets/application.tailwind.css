@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-1{
+  border: 1px solid #999999;
+}
+.on-hover-pointer{
+  cursor: pointer;
+}
+.error_label{
+  filter: drop-shadow(1px 1px 5px #db0000);
+}
+
+button{  
+  .show-when-enabled{
+    display: initial;
+  }
+  .show-when-disabled{
+    display: none;
+  }
+  &[disabled]{
+    background: #7D997D;
+    .show-when-enabled{
+      display: none;
+    }
+    .show-when-disabled{
+      display: initial;
+      opacity: 80%;
+    } 
+  }
+}
